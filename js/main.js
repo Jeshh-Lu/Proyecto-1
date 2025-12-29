@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
+
     // Intersection Observer for Fade In Animations
     const observerOptions = {
         root: null, // viewport
@@ -18,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Target elements
     const animatedElements = document.querySelectorAll('.fade-in');
-    
+
     animatedElements.forEach(el => {
         observer.observe(el);
     });
